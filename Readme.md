@@ -4,14 +4,23 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 <!-- default file list -->
-*Files to look at*:
-
-* [Program.cs](./CS/PdfProcessorGetImages/Program.cs) (VB: [Program.vb](./VB/PdfProcessorGetImages/Program.vb))
+*
 <!-- default file list end -->
 # PDF Document API - Extract Images from a Document in Code
 
-This example illustrates the use of the <a href="https://documentation.devexpress.com/#DocumentServer/DevExpressPdfPdfDocumentProcessor_GetImagestopic">GetImages</a> method for obtaining document bitmaps in code by using <a href="https://documentation.devexpress.com/#DocumentServer/CustomDocument16491">PdfDocumentProcessor</a>.<br><br>The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. Please refer to the <a href="https://www.devexpress.com/Subscriptions/">DevExpress Subscription</a> page for pricing information. <br><br>
+This example illustrates the use of the [PdfDocumentProcessor.GetImages](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.GetImages.overloads) method to obtain document bitmaps in code.
 
-<br/>
+> [!NOTE]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. Please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page for pricing information.
+
+# Files to Review
+
+* [Program.cs](./CS/PdfProcessorGetImages/Program.cs) (VB: [Program.vb](./VB/PdfProcessorGetImages/Program.vb))
+
+# Documentation
+
+* [How to: Extract Images from a Document](https://docs.devexpress.com/OfficeFileAPI/17588/pdf-document-api/examples/extract-content-from-a-pdf-document/how-to-extract-images-from-a-document)
+
+
 
 

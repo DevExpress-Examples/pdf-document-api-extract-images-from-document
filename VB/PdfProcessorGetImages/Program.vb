@@ -2,6 +2,7 @@
 Imports System
 Imports System.Collections.Generic
 Imports System.Drawing
+Imports DevExpress.Drawing
 Imports DevExpress.Pdf
 
 ' ...
@@ -10,10 +11,10 @@ Namespace PdfProcessorGetImages
 
     Friend Class Program
 
-'#Region "#Code"
+        '#Region "#Code"
         Shared Sub Main(ByVal args As String())
             Dim processor As PdfDocumentProcessor = New PdfDocumentProcessor()
-            processor.LoadDocument("..\\..\\Demo.pdf")
+            processor.LoadDocument("..\\..\\..\\Demo.pdf")
             Dim xCount As Integer = 8
             Dim yCount As Integer = 2
             Dim cardWidth As Double = 150.5 ' Measured in points (equals 2.09 inches).
@@ -27,9 +28,9 @@ Namespace PdfProcessorGetImages
                 Dim x As Integer = 0
                 While x < xCount
                     Dim area As PdfDocumentArea = New PdfDocumentArea(1, New PdfRectangle(xCoord, yCoord, xCoord + cardWidth, yCoord + cardHeight))
-                    Dim bitmaps As IList(Of Bitmap) = processor.GetImages(area)
+                    Dim bitmaps As IList(Of DXBitmap) = processor.GetImages(area)
                     If bitmaps.Count <> 0 Then
-                        bitmaps(0).Save(String.Format("{0}_{1}.bmp", x, y))
+                        bitmaps(0).Save(String.Format("{0}_{1}.bmp", x, y), DXImageFormat.Bmp)
                         bitmaps(0).Dispose()
                     End If
 
@@ -42,6 +43,6 @@ Namespace PdfProcessorGetImages
                 yCoord += cardHeight
             End While
         End Sub
-'#End Region  ' #Code
+        '#End Region  ' #Code
     End Class
 End Namespace

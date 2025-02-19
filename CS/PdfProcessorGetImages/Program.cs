@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using DevExpress.Drawing;
 using DevExpress.Pdf;
 // ...
 #endregion #Reference
@@ -11,7 +12,7 @@ namespace PdfProcessorGetImages {
         #region #Code
         static void Main(string[] args) {
             PdfDocumentProcessor processor = new PdfDocumentProcessor();
-            processor.LoadDocument(@"..\\..\\Demo.pdf");
+            processor.LoadDocument(@"..\\..\\..\\Demo.pdf");
 
             int xCount = 8; 
             int yCount = 2;
@@ -26,9 +27,9 @@ namespace PdfProcessorGetImages {
                 for (int x = 0; x < xCount; x++, xCoord += cardWidth) {
                     PdfDocumentArea area = new PdfDocumentArea(1,
                         new PdfRectangle(xCoord, yCoord, xCoord + cardWidth, yCoord + cardHeight));
-                    IList<Bitmap> bitmaps = processor.GetImages(area);
+                    IList<DXBitmap> bitmaps = processor.GetDXImages(area);
                     if (bitmaps.Count != 0) {
-                        bitmaps[0].Save(String.Format(@"{0}_{1}.bmp", x, y));
+                        bitmaps[0].Save(String.Format(@"{0}_{1}.bmp", x, y), DXImageFormat.Bmp);
                         bitmaps[0].Dispose();
                     }
                     Console.WriteLine(bitmaps.Count.ToString());
